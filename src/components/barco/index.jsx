@@ -1,5 +1,6 @@
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
+import './index.css'
 
 
 const options = {
@@ -22,10 +23,8 @@ const options = {
 };
 
 const HorizontalBarChart = (props) => (
-  <div style={{ height: "300", display: "flex" }}>
+  <div className="o-cotainer-chart" style={{  }}>
     <Bar
-      width='1200'
-      height='300'
       data={{
         labels: props.olabels.slice(0, 5),
         datasets: [

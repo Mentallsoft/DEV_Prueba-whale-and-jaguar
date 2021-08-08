@@ -1,0 +1,10 @@
+.o-cotainer-chart{
+    width: 60vw; 
+}
+
+@media (max-width: 700px) {
+    .o-cotainer-chart{
+        width: 90vw;
+        height: 20vh; 
+    }
+}
