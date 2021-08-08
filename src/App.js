@@ -1,7 +1,8 @@
-import React, {setState, Component } from "react";
+import React, { Component } from "react";
 import './App.css';
 import NumberFormat from "react-number-format";
-import api from './api';
+import api from './components/api';
+import NuevaPagina from './components/barco'
 
 class App extends Component {
 
@@ -52,13 +53,17 @@ class App extends Component {
         <h1>
           COUNTRIES
         </h1>
-       
+        <NuevaPagina olabels={countries} ovalues={population}/>
+        <br/>
+        <br />
+        <div className='row'>
         <div className='o-container-buttons'>
           <button className='o-button' disabled={(sortType === 'asc') ? true : false} onClick={() => this.directionalSort('asc')}>Sort by asc</button>
           <button className='o-button' disabled={(sortType === 'desc') ? true : false} onClick={() => this.directionalSort('desc')}>Sort by desc</button>
         </div>
-        <br />
-        <div className='row'>
+        <br/>
+        <br/>
+        <br/>
           {sorted.map(
             (countryJSON, key) => (
               <div className="o-card" key={key}>
