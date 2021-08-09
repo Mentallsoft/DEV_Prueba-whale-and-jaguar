@@ -8,7 +8,8 @@ class App extends Component {
 
   state = {
     countriesJSON: [],
-    sortType: 'desc'
+    sortType: 'desc',
+    UrlImages: 'https://flagpedia.net/data/flags/normal/'
   }
 
   async componentDidMount() {
@@ -31,7 +32,7 @@ class App extends Component {
 
   render() {
 
-    const { countriesJSON, sortType } = this.state;
+    const { countriesJSON, sortType, UrlImages } = this.state;
 
     const sorted2 = countriesJSON.sort(function (a, b) {
       const sortedJSON = (sortType === 'asc') ? a.population - b.population : b.population - a.population;
@@ -41,15 +42,11 @@ class App extends Component {
     var auxCountries = [];
     var auxPopulation = [];
 
+    //Sort array by population
     sorted2.map(element => {
       auxCountries.push(element.name);
       auxPopulation.push(element.population)
     })
-
-    /*const sorted = countriesJSON.sort((a, b) => {
-      const isReversed = (sortType === 'asc') ? 1 : -1;
-      return isReversed * a.name.localeCompare(b.name)
-    });*/
 
     return (
       <div className="o-app-container">
@@ -69,6 +66,10 @@ class App extends Component {
           {sorted2.map(
             (countryJSON, key) => (
               <div className="o-card" key={key}>
+                <div className='o-flag-container'>
+                  <img className='o-flag-img' src={UrlImages + countryJSON.alpha2Code.toLowerCase() + '.png'} alt={UrlImages + countryJSON.alpha2Code.toLowerCase()} />
+                </div>
+
                 <h2 id="o-country">
                   {countryJSON.name}
                 </h2>

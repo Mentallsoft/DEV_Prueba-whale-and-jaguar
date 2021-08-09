@@ -25,6 +25,19 @@ h1, h2, h3, h4, h5, p, a{
 
 }
 
+.o-flag-container{
+    width: 100%;
+    height: 15vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.o-flag-img{
+    height: 100%;
+}
+
 .row{
     background-color: rgb(230, 230, 230);
 
@@ -49,7 +62,7 @@ h1, h2, h3, h4, h5, p, a{
     width: 25%;
     margin: 0 1vw 1vw 1vw;
 
-    padding: 0 2vw;
+    padding: 2vw;
 
     background-color: whitesmoke;
     border-radius:10px;
@@ -89,4 +102,11 @@ h1, h2, h3, h4, h5, p, a{
     -webkit-box-shadow: inset -3px 3px 14px -1px rgba(0,0,0,0.53);
 -moz-box-shadow: inset -3px 3px 14px -1px rgba(0,0,0,0.53);
 box-shadow: inset -3px 3px 14px -1px rgba(0,0,0,0.53);
+}
+
+@media (max-width: 700px) {
+    .o-card{
+        width: 90%;
+        margin-bottom: 3vw;
+    }
 }
