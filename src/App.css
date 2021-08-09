@@ -6,22 +6,26 @@ input{
     width: 100%;
     height: 1.5rem;
     margin: 0 auto;
-    border: none; /* <-- This thing here */
+
+    outline:none;
+    border: none; 
     border:solid 1px #ccc;
     border-radius: 10px;
 
     text-align: center;
   }
 
-#o-country{
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
+  select{
+    width: 100%;
+    height: 1.5rem;
 
-#o-capital{
-    margin: 0;
-    padding: 0;
-}
+    outline:none;
+    border: none;
+    border:solid 1px #ccc;
+    border-radius: 10px;
+
+    text-align-last:center;
+  }
 
 .o-app-container{
     background-color: whitesmoke;
@@ -34,19 +38,6 @@ input{
 
     align-items: center;
 
-}
-
-.o-flag-container{
-    width: 100%;
-    height: 15vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.o-flag-img{
-    height: 100%;
 }
 
 .row{
@@ -67,20 +58,6 @@ input{
     -webkit-box-shadow: 0px 3px 15px -1px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 3px 15px -1px rgba(0,0,0,0.75);
     box-shadow: 0px 3px 15px -1px rgba(0,0,0,0.75);
-}
-
-.o-card{
-    width: 25%;
-    margin: 0 1vw 1vw 1vw;
-
-    padding: 2vw;
-
-    background-color: whitesmoke;
-    border-radius:10px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .o-container-buttons{
@@ -113,11 +90,4 @@ input{
     -webkit-box-shadow: inset -3px 3px 14px -1px rgba(0,0,0,0.53);
 -moz-box-shadow: inset -3px 3px 14px -1px rgba(0,0,0,0.53);
 box-shadow: inset -3px 3px 14px -1px rgba(0,0,0,0.53);
-}
-
-@media (max-width: 700px) {
-    .o-card{
-        width: 90%;
-        margin-bottom: 3vw;
-    }
 }
