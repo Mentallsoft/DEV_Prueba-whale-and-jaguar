@@ -2,6 +2,17 @@ h1, h2, h3, h4, h5, p, a{
     color: #565959;
 }
 
+input{
+    width: 100%;
+    height: 1.5rem;
+    margin: 0 auto;
+    border: none; /* <-- This thing here */
+    border:solid 1px #ccc;
+    border-radius: 10px;
+
+    text-align: center;
+  }
+
 #o-country{
     margin-bottom: 0;
     padding-bottom: 0;
@@ -42,7 +53,7 @@ h1, h2, h3, h4, h5, p, a{
     background-color: rgb(230, 230, 230);
 
     display: flex;
-    width: 90vw;  
+    width: 80vw;  
     padding: 3vw;
     border-radius:10px;   
 

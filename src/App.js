@@ -5,11 +5,19 @@ import api from './components/api';
 import BarChart from './components/barchart'
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      countriesJSON: [],
+      sortType: 'desc',
+      UrlImages: 'https://flagpedia.net/data/flags/normal/',
+      filteredCountry: ''
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+  }
 
   state = {
-    countriesJSON: [],
-    sortType: 'desc',
-    UrlImages: 'https://flagpedia.net/data/flags/normal/'
   }
 
   async componentDidMount() {
@@ -30,14 +38,20 @@ class App extends Component {
     this.setState({ sortType })
   }
 
+  handleChange(event) {
+    this.setState({ filteredCountry: event.target.value });
+  }
+
   render() {
 
-    const { countriesJSON, sortType, UrlImages } = this.state;
+    const { countriesJSON, sortType, UrlImages, filteredCountry } = this.state;
 
-    const sorted2 = countriesJSON.sort(function (a, b) {
+    const sorted = countriesJSON.sort(function (a, b) {
       const sortedJSON = (sortType === 'asc') ? a.population - b.population : b.population - a.population;
       return sortedJSON;
     });
+
+    const sorted2 = sorted.filter((countries) => countries.name.toLowerCase().includes(filteredCountry.toLowerCase()));
 
     var auxCountries = [];
     var auxPopulation = [];
@@ -48,11 +62,32 @@ class App extends Component {
       auxPopulation.push(element.population)
     })
 
+    //Get unique values in JSON sorted
+    const prueba = new Set(sorted2.map(
+      (a) => {
+        return a.region
+      }
+    ))
+
+    console.log(prueba)
     return (
       <div className="o-app-container">
         <h1>
           COUNTRIES
         </h1>
+
+        <form>
+          <label>Do you want to search for a country? </label>
+          <br />
+          <br />
+          <input type="text" value={filteredCountry} onChange={this.handleChange} placeholder='Colombia' />
+          <br />
+          <br />
+          <label htmlFor="">Region: </label>
+        </form>
+
+        <br />
+
         <div className='o-container-buttons'>
           <button className='o-button' disabled={(sortType === 'asc') ? true : false} onClick={() => this.directionalSort('asc')}>Sort by asc</button>
           <button className='o-button' disabled={(sortType === 'desc') ? true : false} onClick={() => this.directionalSort('desc')}>Sort by desc</button>
@@ -61,6 +96,7 @@ class App extends Component {
         <BarChart olabels={auxCountries} ovalues={auxPopulation} />
         <br />
         <br />
+
         <div className='row'>
 
           {sorted2.map(
@@ -77,9 +113,15 @@ class App extends Component {
                   Capital: {countryJSON.capital}
                 </h4>
                 <p>
+                  Region: {countryJSON.region}
+                  <br />
+                  Language: {countryJSON.languages[0].name}
+                  <br />
+                  Currency: {countryJSON.currencies[0].name}
+                  <br />
                   Population: <NumberFormat value={countryJSON.population} displayType={'text'} thousandSeparator={true} />
                   <br />
-                  Currency: {countryJSON.currencies[0].code}
+                  Area: <NumberFormat value={countryJSON.area} displayType={'text'} thousandSeparator={true} /> Km<sup>2</sup>
                 </p>
                 <h5>
                   <a href={"https://es.wikipedia.org/wiki/" + countryJSON.name} target="_blank" rel="noopener noreferrer">
