@@ -1,6 +1,8 @@
 # This application is developed as a test for Whale and Jaguar
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- To query APIs, the Axio library was used.
+- To graph data, we import chart js
 
 ## To make it easy, perform the following instructions for the correct deployment:
 
