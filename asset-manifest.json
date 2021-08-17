@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/DEV_Prueba-whale-and-jaguar/static/css/main.abd47bbd.chunk.css",
+    "main.js": "/DEV_Prueba-whale-and-jaguar/static/js/main.18477453.chunk.js",
+    "main.js.map": "/DEV_Prueba-whale-and-jaguar/static/js/main.18477453.chunk.js.map",
+    "runtime-main.js": "/DEV_Prueba-whale-and-jaguar/static/js/runtime-main.831fdb9c.js",
+    "runtime-main.js.map": "/DEV_Prueba-whale-and-jaguar/static/js/runtime-main.831fdb9c.js.map",
+    "static/js/2.76faeee4.chunk.js": "/DEV_Prueba-whale-and-jaguar/static/js/2.76faeee4.chunk.js",
+    "static/js/2.76faeee4.chunk.js.map": "/DEV_Prueba-whale-and-jaguar/static/js/2.76faeee4.chunk.js.map",
+    "index.html": "/DEV_Prueba-whale-and-jaguar/index.html",
+    "static/css/main.abd47bbd.chunk.css.map": "/DEV_Prueba-whale-and-jaguar/static/css/main.abd47bbd.chunk.css.map",
+    "static/js/2.76faeee4.chunk.js.LICENSE.txt": "/DEV_Prueba-whale-and-jaguar/static/js/2.76faeee4.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.831fdb9c.js",
+    "static/js/2.76faeee4.chunk.js",
+    "static/css/main.abd47bbd.chunk.css",
+    "static/js/main.18477453.chunk.js"
+  ]
+}
